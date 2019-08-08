@@ -18,7 +18,9 @@ static void gen_function(std::string const &func_name, r64 &param)
     label(func_name);
 
     FLDPI();
-    FSTP(param);
+
+    m80fp addr { param };
+    FSTP(addr);
 
     RET();
 }
