@@ -3,6 +3,9 @@
 int main(int argc, char *argv[])
 try
 {
+    argc = argc;
+    argv = argv;
+
     return EXIT_SUCCESS;
 }
 catch (...)
