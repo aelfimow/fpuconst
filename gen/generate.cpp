@@ -5,7 +5,7 @@
 
 #include "cppasm.h"
 
-static void gen_function(std::string const &func_name, r64 &param)
+static void gen_function_fldpi(std::string const &func_name, r64 &param)
 {
     comment("void " + func_name + "(void *p)");
     comment("p is in " + param.name());
@@ -47,12 +47,12 @@ try
 
     if (forWindows)
     {
-        gen_function("fpu_pi", RCX);
+        gen_function_fldpi("fpu_pi", RCX);
     }
 
     if (forLinux)
     {
-        gen_function("fpu_pi", RDI);
+        gen_function_fldpi("fpu_pi", RDI);
     }
 
     return EXIT_SUCCESS;
