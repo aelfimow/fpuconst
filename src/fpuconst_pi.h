@@ -5,7 +5,7 @@
 
 extern "C" void fpu_pi(void *p);
 
-template <typename T> class fpu_const_windows
+template <typename T> class fpuconst_pi
 {
     public:
         operator T()
