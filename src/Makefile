@@ -7,4 +7,6 @@ CXXFLAGS += -Weffc++
 CXXFLAGS += -std=c++17
 
 all:
-	g++ -c main.cpp -o main.o ${CXXFLAGS}
+	$(AS) fpu_const_windows.S ${ASFLAGS64} -o fpu_const_windows.o
+	$(CXX) -c main.cpp -o main.o ${CXXFLAGS}
+	$(CXX) main.o fpu_const_windows.o -o main.exe ${CXXFLAGS}
