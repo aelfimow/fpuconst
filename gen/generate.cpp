@@ -48,12 +48,16 @@ try
 
     if (forWindows)
     {
-        gen_function_fldpi<m80fp>("fpu_pi", RCX);
+        gen_function_fldpi<m80fp>("fpu_pi80", RCX);
+        gen_function_fldpi<m64fp>("fpu_pi64", RCX);
+        gen_function_fldpi<m32fp>("fpu_pi32", RCX);
     }
 
     if (forLinux)
     {
-        gen_function_fldpi<m80fp>("fpu_pi", RDI);
+        gen_function_fldpi<m80fp>("fpu_pi80", RDI);
+        gen_function_fldpi<m64fp>("fpu_pi64", RDI);
+        gen_function_fldpi<m32fp>("fpu_pi32", RDI);
     }
 
     return EXIT_SUCCESS;
