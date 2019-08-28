@@ -22,3 +22,27 @@ fpu_pi32:
 	fldpi
 	fstps (%rcx)
 	ret
+# void fpu_zero80(void *p)
+# p is in %rcx
+.global fpu_zero80
+.section .text
+fpu_zero80:
+	fldz
+	fstpt (%rcx)
+	ret
+# void fpu_zero64(void *p)
+# p is in %rcx
+.global fpu_zero64
+.section .text
+fpu_zero64:
+	fldz
+	fstpl (%rcx)
+	ret
+# void fpu_zero32(void *p)
+# p is in %rcx
+.global fpu_zero32
+.section .text
+fpu_zero32:
+	fldz
+	fstps (%rcx)
+	ret
