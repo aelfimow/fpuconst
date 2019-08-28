@@ -15,6 +15,14 @@ try
     std::cout << "pi_double: " << pi_double << std::endl;
     std::cout << "pi_long_double: " << pi_long_double << std::endl;
 
+    fpuconst_zero<float> zero_float;
+    fpuconst_zero<double> zero_double;
+    fpuconst_zero<long double> zero_long_double;
+
+    std::cout << "zero_float: " << zero_float << std::endl;
+    std::cout << "zero_double: " << zero_double << std::endl;
+    std::cout << "zero_long_double: " << zero_long_double << std::endl;
+
     return EXIT_SUCCESS;
 }
 catch (...)
