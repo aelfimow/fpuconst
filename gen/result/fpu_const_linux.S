@@ -46,3 +46,27 @@ fpu_zero32:
 	fldz
 	fstps (%rdi)
 	ret
+# void fpu_one80(void *p)
+# p is in %rdi
+.global fpu_one80
+.section .text
+fpu_one80:
+	fld1
+	fstpt (%rdi)
+	ret
+# void fpu_one64(void *p)
+# p is in %rdi
+.global fpu_one64
+.section .text
+fpu_one64:
+	fld1
+	fstpl (%rdi)
+	ret
+# void fpu_one32(void *p)
+# p is in %rdi
+.global fpu_one32
+.section .text
+fpu_one32:
+	fld1
+	fstps (%rdi)
+	ret
