@@ -47,6 +47,27 @@ void gen_function_fldz(std::string const &func_name, r64 &param)
     RET();
 }
 
+template <typename T>
+void gen_function_fld1(std::string const &func_name, r64 &param)
+{
+    comment("void " + func_name + "(void *p)");
+    comment("p is in " + param.name());
+
+    global(func_name);
+
+    section code { ".text" };
+    code.start();
+
+    label(func_name);
+
+    FLD1();
+
+    T addr { param };
+    FSTP(addr);
+
+    RET();
+}
+
 int main(int argc, char *argv[])
 try
 {
@@ -75,6 +96,9 @@ try
         gen_function_fldz<m80fp>("fpu_zero80", RCX);
         gen_function_fldz<m64fp>("fpu_zero64", RCX);
         gen_function_fldz<m32fp>("fpu_zero32", RCX);
+        gen_function_fld1<m80fp>("fpu_one80", RCX);
+        gen_function_fld1<m64fp>("fpu_one64", RCX);
+        gen_function_fld1<m32fp>("fpu_one32", RCX);
     }
 
     if (forLinux)
@@ -85,6 +109,9 @@ try
         gen_function_fldz<m80fp>("fpu_zero80", RDI);
         gen_function_fldz<m64fp>("fpu_zero64", RDI);
         gen_function_fldz<m32fp>("fpu_zero32", RDI);
+        gen_function_fld1<m80fp>("fpu_one80", RDI);
+        gen_function_fld1<m64fp>("fpu_one64", RDI);
+        gen_function_fld1<m32fp>("fpu_one32", RDI);
     }
 
     return EXIT_SUCCESS;
