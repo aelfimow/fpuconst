@@ -25,6 +25,14 @@ try
     std::cout << "zero_double: " << zero_double << std::endl;
     std::cout << "zero_long_double: " << zero_long_double << std::endl;
 
+    fpuconst_one<float> one_float;
+    fpuconst_one<double> one_double;
+    fpuconst_one<long double> one_long_double;
+
+    std::cout << "one_float: " << one_float << std::endl;
+    std::cout << "one_double: " << one_double << std::endl;
+    std::cout << "one_long_double: " << one_long_double << std::endl;
+
     return EXIT_SUCCESS;
 }
 catch (...)
