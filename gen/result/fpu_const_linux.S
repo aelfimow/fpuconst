@@ -70,3 +70,27 @@ fpu_one32:
 	fld1
 	fstps (%rdi)
 	ret
+# void fpu_ld10_80(void *p)
+# p is in %rdi
+.global fpu_ld10_80
+.section .text
+fpu_ld10_80:
+	fldl2t
+	fstpt (%rdi)
+	ret
+# void fpu_ld10_64(void *p)
+# p is in %rdi
+.global fpu_ld10_64
+.section .text
+fpu_ld10_64:
+	fldl2t
+	fstpl (%rdi)
+	ret
+# void fpu_ld10_32(void *p)
+# p is in %rdi
+.global fpu_ld10_32
+.section .text
+fpu_ld10_32:
+	fldl2t
+	fstps (%rdi)
+	ret
