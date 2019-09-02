@@ -94,3 +94,27 @@ fpu_ld10_32:
 	fldl2t
 	fstps (%rcx)
 	ret
+# void fpu_ld_e_80(void *p)
+# p is in %rcx
+.global fpu_ld_e_80
+.section .text
+fpu_ld_e_80:
+	fldl2e
+	fstpt (%rcx)
+	ret
+# void fpu_ld_e_64(void *p)
+# p is in %rcx
+.global fpu_ld_e_64
+.section .text
+fpu_ld_e_64:
+	fldl2e
+	fstpl (%rcx)
+	ret
+# void fpu_ld_e_32(void *p)
+# p is in %rcx
+.global fpu_ld_e_32
+.section .text
+fpu_ld_e_32:
+	fldl2e
+	fstps (%rcx)
+	ret
