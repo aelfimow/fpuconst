@@ -4,6 +4,6 @@ Helper C++ functions to get constants from x86 FPU:
 * ld(10)
 * ld(e)
 * pi
-* ld(2)
+* lg(2)
 * ln(2)
 * +0.0
