@@ -33,6 +33,14 @@ try
     std::cout << "one_double: " << one_double << std::endl;
     std::cout << "one_long_double: " << one_long_double << std::endl;
 
+    fpuconst_ld10<float> ld10_float;
+    fpuconst_ld10<double> ld10_double;
+    fpuconst_ld10<long double> ld10_long_double;
+
+    std::cout << "ld10_float: " << ld10_float << std::endl;
+    std::cout << "ld10_double: " << ld10_double << std::endl;
+    std::cout << "ld10_long_double: " << ld10_long_double << std::endl;
+
     return EXIT_SUCCESS;
 }
 catch (...)

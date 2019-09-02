@@ -6,5 +6,6 @@
 #include "fpuconst_pi.h"
 #include "fpuconst_zero.h"
 #include "fpuconst_one.h"
+#include "fpuconst_ld10.h"
 
 #endif
