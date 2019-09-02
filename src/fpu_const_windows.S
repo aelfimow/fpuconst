@@ -142,3 +142,27 @@ fpu_lg2_32:
 	fldlg2
 	fstps (%rcx)
 	ret
+# void fpu_ln2_80(void *p)
+# p is in %rcx
+.global fpu_ln2_80
+.section .text
+fpu_ln2_80:
+	fldln2
+	fstpt (%rcx)
+	ret
+# void fpu_ln2_64(void *p)
+# p is in %rcx
+.global fpu_ln2_64
+.section .text
+fpu_ln2_64:
+	fldln2
+	fstpl (%rcx)
+	ret
+# void fpu_ln2_32(void *p)
+# p is in %rcx
+.global fpu_ln2_32
+.section .text
+fpu_ln2_32:
+	fldln2
+	fstps (%rcx)
+	ret
