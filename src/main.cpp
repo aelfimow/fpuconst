@@ -57,6 +57,14 @@ try
     std::cout << "lg2_double: " << lg2_double << std::endl;
     std::cout << "lg2_long_double: " << lg2_long_double << std::endl;
 
+    fpuconst_ln2<float> ln2_float;
+    fpuconst_ln2<double> ln2_double;
+    fpuconst_ln2<long double> ln2_long_double;
+
+    std::cout << "ln2_float: " << ln2_float << std::endl;
+    std::cout << "ln2_double: " << ln2_double << std::endl;
+    std::cout << "ln2_long_double: " << ln2_long_double << std::endl;
+
     return EXIT_SUCCESS;
 }
 catch (...)

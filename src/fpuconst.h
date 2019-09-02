@@ -9,5 +9,6 @@
 #include "fpuconst_ld10.h"
 #include "fpuconst_ld_e.h"
 #include "fpuconst_lg2.h"
+#include "fpuconst_ln2.h"
 
 #endif
