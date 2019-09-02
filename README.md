@@ -1,2 +1,9 @@
 # fpuconst
-Helper C++ functions to get constants like Pi from x86 FPU
+Helper C++ functions to get constants from x86 FPU:
+* +1.0
+* ld(10)
+* ld(e)
+* pi
+* ld(2)
+* ln(2)
+* +0.0
