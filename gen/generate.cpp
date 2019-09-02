@@ -89,6 +89,27 @@ void gen_function_fldl2t(std::string const &func_name, r64 &param)
     RET();
 }
 
+template <typename T>
+void gen_function_fldl2e(std::string const &func_name, r64 &param)
+{
+    comment("void " + func_name + "(void *p)");
+    comment("p is in " + param.name());
+
+    global(func_name);
+
+    section code { ".text" };
+    code.start();
+
+    label(func_name);
+
+    FLDL2E();
+
+    T addr { param };
+    FSTP(addr);
+
+    RET();
+}
+
 int main(int argc, char *argv[])
 try
 {
@@ -123,6 +144,9 @@ try
         gen_function_fldl2t<m80fp>("fpu_ld10_80", RCX);
         gen_function_fldl2t<m64fp>("fpu_ld10_64", RCX);
         gen_function_fldl2t<m32fp>("fpu_ld10_32", RCX);
+        gen_function_fldl2e<m80fp>("fpu_ld_e_80", RCX);
+        gen_function_fldl2e<m64fp>("fpu_ld_e_64", RCX);
+        gen_function_fldl2e<m32fp>("fpu_ld_e_32", RCX);
     }
 
     if (forLinux)
@@ -139,6 +163,9 @@ try
         gen_function_fldl2t<m80fp>("fpu_ld10_80", RDI);
         gen_function_fldl2t<m64fp>("fpu_ld10_64", RDI);
         gen_function_fldl2t<m32fp>("fpu_ld10_32", RDI);
+        gen_function_fldl2e<m80fp>("fpu_ld_e_80", RDI);
+        gen_function_fldl2e<m64fp>("fpu_ld_e_64", RDI);
+        gen_function_fldl2e<m32fp>("fpu_ld_e_32", RDI);
     }
 
     return EXIT_SUCCESS;
