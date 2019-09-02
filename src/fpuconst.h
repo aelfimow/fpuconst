@@ -8,5 +8,6 @@
 #include "fpuconst_one.h"
 #include "fpuconst_ld10.h"
 #include "fpuconst_ld_e.h"
+#include "fpuconst_lg2.h"
 
 #endif
