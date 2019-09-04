@@ -10,6 +10,8 @@ ASFLAGS64  = --64
 CPPASM_INC = ../../cppasm/src
 CPPASM_OBJ = ../../cppasm/src/obj/*.o
 
+ASMOUT_DIR = ../src
+
 .PHONY: compile
 .PHONY: link
 .PHONY: generate
@@ -25,9 +27,9 @@ link:
 	$(CXX) generate.o $(CPPASM_OBJ) -o generate.exe $(CXXFLAGS)
 
 generate:
-	generate.exe windows > result/fpu_const_windows.S
-	generate.exe linux > result/fpu_const_linux.S
+	generate.exe windows > $(ASMOUT_DIR)/fpu_const_windows.S
+	generate.exe linux > $(ASMOUT_DIR)/fpu_const_linux.S
 
 check:
-	$(AS) result/fpu_const_windows.S ${ASFLAGS64} -o fpu_const_windows.o
-	$(AS) result/fpu_const_linux.S ${ASFLAGS64} -o fpu_const_linux.o
+	$(AS) $(ASMOUT_DIR)/fpu_const_windows.S ${ASFLAGS64} -o fpu_const_windows.o
+	$(AS) $(ASMOUT_DIR)/fpu_const_linux.S ${ASFLAGS64} -o fpu_const_linux.o
